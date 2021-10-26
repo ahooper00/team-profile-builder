@@ -3,6 +3,9 @@ const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const generateHtml = require('./generatehtml');
+
+const htmlFile = './dist/index.html';
 
 const fs = require('fs');
 const { type } = require('os');
@@ -29,7 +32,6 @@ async function startQuestions() {
         await employeeTypePrompt();
         addTeamMember = await firstQuestionPrompt();
     }
-    createTeamProfile(); // function that puts info into HTML page
 }
 
 const employeeTypePrompt = () => {
@@ -136,4 +138,15 @@ const internPrompt = () => {
     });
 }
 
-startQuestions();
+startQuestions().then(() => {
+    const html = generateHtml(teamProfile);
+    console.log(html);
+    writeToFile(html);
+});
+
+function writeToFile(data) {
+    fs.writeFile('dist/teamProfile.html', data, function (err) {
+        if (err) throw err;
+        console.log('Saved!');
+    });
+}
