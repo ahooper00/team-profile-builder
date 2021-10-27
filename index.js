@@ -3,7 +3,7 @@ const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-const generateHtml = require('./generatehtml');
+const generateHtml = require('./generateHtml');
 
 const htmlFile = './dist/index.html';
 
