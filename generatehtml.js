@@ -7,13 +7,14 @@ const generateEmployeeHtml = (employee) => {
     let roleInfo;
     switch (employee.getRole()) {
         case "Manager":
-            roleInfo = employee.getOfficeNumber();
+            roleInfo = 'Office number: ' + employee.getOfficeNumber();
             break;
         case "Engineer":
-            roleInfo = employee.getGithub();
+            roleInfo = 'GitHub: ' + employee.getGithub();
             break;
         case "Intern":
-            roleInfo = employee.getSchool();
+            roleInfo = 'School: ' + employee.getSchool();
+            break;
     }
     return `
 <div class="employee-card col-md-3 pt-4 pb-4 m-2 bg-light h-50 d-inline-block">
@@ -21,8 +22,8 @@ const generateEmployeeHtml = (employee) => {
     <p class="employee-type text-center">${employee.getRole()}</p>
     <div class="card-body bg-secondary p-2 h-75">
         <ul class="list-group">
-            <li class="list-group-item">${employee.getId()}</li>
-            <li class="list-group-item">${employee.getEmail()}</li>
+            <li class="list-group-item">ID: ${employee.getId()}</li>
+            <li class="list-group-item">Email: ${employee.getEmail()}</li>
             <li class="list-group-item">${roleInfo}</li>
         </ul>
     </div>
@@ -49,9 +50,7 @@ const generateHtml = (teamProfile) => {
     </div>
 
     <div class="row justify-content-center">
-        <div class="row justify-content-center">
         ${generateTeamMembers(teamProfile)}
-        </div>
     </div>
 </main>
 `
