@@ -21,3 +21,5 @@ Jest is used to perform the tests for each class and constructors to ensure that
 Four test files have been created and used for this application, each targetting a different type of team member - 'Employee', 'Manager', 'Engineer', and 'Intern'. The tests aim to confirm that each employee type is what it says it is, and that they contain the correct information. The tests check that each team member have a name, ID and email. As each role ('Manager', 'Engineer', and 'Intern') extend from the parent 'Employee' class, the tests also check that these three roles are indeed employees.
 
 ![screenshot-of-application](screenshot.png)
+
+Link to video walkthrough: https://drive.google.com/file/d/177L0kz93uHSJJI0UtDeyLXKL-ENwiRtT/view?usp=sharing 
