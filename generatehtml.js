@@ -23,7 +23,7 @@ const generateEmployeeHtml = (employee) => {
     <div class="card-body bg-secondary p-2 h-75">
         <ul class="list-group">
             <li class="list-group-item">ID: ${employee.getId()}</li>
-            <li class="list-group-item">Email: ${employee.getEmail()}</li>
+            <li class="list-group-item">Email: <a href="mailto:${employee.getEmail()}">${employee.getEmail()}</a></li>
             <li class="list-group-item">${roleInfo}</li>
         </ul>
     </div>
